@@ -2,6 +2,8 @@
   "name": "haroro-cli",
   "version": "1.0.1",
   "description": "一个不太聪明的前端制作的脚手架工具😭",
+  "homepage": "https://github.com/iHaroro/haroro-cli",
+  "repository": "https://github.com/iHaroro/haroro-cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +14,7 @@
     "脚手架"
   ],
   "author": "Haroro",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "haroro-cli": "index.js"
   },
