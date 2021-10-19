@@ -1,0 +1,25 @@
+{
+  "name": "haroro-cli",
+  "version": "1.0.1",
+  "description": "一个不太聪明的前端制作的脚手架工具😭",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "haroro",
+    "cli",
+    "脚手架"
+  ],
+  "author": "Haroro",
+  "license": "ISC",
+  "bin": {
+    "haroro-cli": "index.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^8.2.0",
+    "download-git-repo": "^3.0.2",
+    "ora": "5.4.1"
+  }
+}
