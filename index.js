@@ -1,15 +1,17 @@
 #!/usr/bin/env node
+const packageJson = require('./package.json')
 const colors = require('colors')
 const { program } = require('commander')
 const downloadGitRepo = require('download-git-repo')
 const ora = require('ora')
 const { projectNames } = require('./src/constants/projects') // 项目集合常量
-const { gitDownloadLog, welcomeLog } = require('./src/utils/logPrints') // 各种log
+const {
+  gitDownloadLog,
+  welcomeLog,
+  projectsDataLog,
+} = require('./src/utils/logPrints') // 各种log
 
-welcomeLog()
-
-program
-  .version('0.0.1') // 版本号
+program.version(packageJson.version) // 版本号
 
 program
   .command('create <projectName>')
@@ -37,9 +39,20 @@ program
 
 program
   .command('help')
-  .description('查看所有可用的模板帮助')
+  .description('查看帮助')
   .action(() => {
-    console.log('😭说实话，我们暂时没有其他模板了~')
+    welcomeLog()
+    console.log('🔎 项目相关帮助'.blue)
+    console.log('🌐 haroro-cli: https://www.npmjs.com/package/haroro-cli'.green)
+    console.log('🌐 react-entry-template: https://github.com/iHaroro/react-entry-template'.green)
+  })
+
+program
+  .command('ls')
+  .description('查看所有可用的项目模板')
+  .action(() => {
+    projectsDataLog()
+    console.log('好吧，说实话，我们暂时没有其他模板了😭')
   })
 
 program.parse(process.argv)
