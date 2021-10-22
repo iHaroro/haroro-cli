@@ -1,5 +1,8 @@
 # haroro-cli
 
+[NPM官网](https://www.npmjs.com/package/haroro-cli)
+[GitHub官网](https://github.com/iHaroro/haroro-cli)
+
 ## 作为一个下载模板项目的脚手架工具
 
 目前 `projectName` 只有 `react-entry-template` 一个项目，`react-entry-template`
