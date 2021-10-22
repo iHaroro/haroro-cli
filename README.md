@@ -34,7 +34,7 @@ haroro-cli module demo1
 
 创建模板项目
 
-`create <projectName> [options]`
+`haroro-cli create <projectName> [options]`
 
 #### *options*
 
@@ -48,7 +48,7 @@ haroro-cli module demo1
 
 _PS：请在模板项目根目录执行该命令_
 
-`module <name> [options]`
+`haroro-cli module <name> [options]`
 
 #### *options*
 
