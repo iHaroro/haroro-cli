@@ -30,19 +30,21 @@ haroro-cli module demo1
 
 ## Command
 
-### **create**
+## **create**
 
 创建模板项目
 
 `haroro-cli create <projectName> [options]`
 
-#### *options*
+#### options
 
 |选项|描述|默认值|
 |:---:|:---:|:---:|
 |`--dirname`|目标文件夹名称|`<projectName>`|
 
-### **module**
+<hr/>
+
+## **module**
 
 创建多入口项目的页面入口模块
 
@@ -50,9 +52,11 @@ _PS：请在模板项目根目录执行该命令_
 
 `haroro-cli module <name> [options]`
 
-#### *options*
+#### options
 
 |选项|描述|默认值|
 |:---:|:---:|:---:|
 |`--dirname`|目标模板模块名称|`project-root/src/pages`|
+
+<hr/>
 
