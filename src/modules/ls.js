@@ -1,5 +1,5 @@
 const { program } = require('commander')
-const { projectsDataLog } = require('./../utils/logPrints')
+const { projectsDataLog } = require('../utils/logPrints')
 
 program
   .command('ls')

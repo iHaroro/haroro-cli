@@ -19,7 +19,8 @@
   "author": "Haroro",
   "license": "MIT",
   "bin": {
-    "haroro-cli": "dist/index.js"
+    "haroro-cli": "dist/index.js",
+    "haroro-cli-dev": "index.js"
   },
   "dependencies": {
     "colors": "^1.4.0",

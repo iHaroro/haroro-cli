@@ -1,6 +1,6 @@
 const colors = require('colors')
 const { program } = require('commander')
-const { welcomeLog } = require('./../utils/logPrints')
+const { welcomeLog } = require('../utils/logPrints')
 
 program
   .command('help')

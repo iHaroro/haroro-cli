@@ -7,7 +7,7 @@ const projectNames = {
     author: 'Haroro',
     description: 'React多入口项目模板',
     homePage: 'https://github.com/iHaroro/react-entry-template/tree/master',
-    // repositoryUrl: 'https://github.com:iHaroro/react-entry-template#master',
+    // repositoryUrl: 'https://github.com/iHaroro/react-entry-template.git',
     repositoryUrl: 'git@github.com:iHaroro/react-entry-template.git',
   },
 }
