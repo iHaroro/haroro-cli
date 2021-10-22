@@ -1,6 +1,6 @@
 const colors = require('colors')
 const { program } = require('commander')
-const downloadGitRepo = require('download-git-repo')
+const clone = require('git-clone')
 const ora = require('ora')
 const { projectNames } = require('./../constants/projects') // 项目集合常量
 const { gitDownloadLog } = require('./../utils/logPrints') // log
@@ -19,11 +19,17 @@ program
     // loading
     const loading = ora('正在下载项目模板').start()
 
-    downloadGitRepo(projectData.repositoryUrl, Dirname || projectName, {}, err => {
-      if (err) {
-        loading.fail('下载失败了，换个姿势试试？（小声BB：你这网可能不行）'.red)
-      } else {
-        loading.succeed('下载完成了，请尽情享用吧~~~'.green)
-      }
-    })
+    clone(
+      projectData.repositoryUrl,
+      Dirname || projectName,
+      {},
+      err => {
+        if (err) {
+          console.log(err)
+          loading.fail('下载失败了，换个姿势试试？（小声BB：你这网可能不行）'.red)
+        } else {
+          loading.succeed('下载完成了，请尽情享用吧~~~'.green)
+        }
+      },
+    )
   })
