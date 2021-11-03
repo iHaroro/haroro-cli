@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="create" type="NodeJSConfigurationType" singleton="false" application-parameters="create react-entry-template --dirname timecaps-h5-react" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$USER_HOME$/Downloads">
+    <method v="2" />
+  </configuration>
+</component>

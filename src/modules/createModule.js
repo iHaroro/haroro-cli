@@ -14,13 +14,14 @@ program
     const projectRoot = process.cwd() // 项目路径
     const { dirname = '/src/pages' } = options // 创建路径
     const createPath = path.join(projectRoot, dirname) // 完整的创建路径
-    const templatePath = path.join(__dirname, './../assets/template/react-module-template') // 页面模板路径
+    const templatePath = path.join(__dirname, '../assets/template/react-module-template') // 页面模板路径
 
     const loading = ora().start(`🚧 将在 ${createPath} 目录下创建页面模块`.blue)
 
     fs.readdir(createPath, (err, files) => {
       if (err) {
         loading.fail(`${err.message}`.red)
+        process.exit()
         return
       }
       if (files.includes(name)) { // 已包含当前的文件模块名，报错
