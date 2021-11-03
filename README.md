@@ -21,9 +21,9 @@
 # 安装
 npm i haroro-cli -g
 # 创建项目模板
-haroro-cli create react-entry-template --dirname you-project-dir-name
+haroro-cli create --dirname you-project-dir-name
 # 进入项目目录
-cd react-entry-template
+cd you-project-dir-name
 # 创建新模块
 haroro-cli module demo1
 ```
@@ -34,7 +34,7 @@ haroro-cli module demo1
 
 创建模板项目
 
-`haroro-cli create <projectName> [options]`
+`haroro-cli create [options]`
 
 #### options
 

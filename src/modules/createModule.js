@@ -2,7 +2,7 @@ const colors = require('colors')
 const { program } = require('commander')
 const path = require('path')
 const fs = require('fs')
-const { copy } = require('../utils/cp')
+const { copy } = require('../utils/file')
 const ora = require('ora')
 
 program
