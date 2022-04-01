@@ -6,9 +6,13 @@ const ora = require('ora')
 const path = require('path')
 const fs = require('fs')
 const { deleteFolder } = require('./../utils/file')
-const { projectNames } = require('../constants/projects') // 项目集合常量
+const {
+  projectNames,
+  projectConfig,
+  projectConfigFileName,
+} = require('../constants/projects') // 项目集合常量
 const { gitDownloadLog } = require('../utils/logPrints') // log
-const { CURRENT_COMMAND_PATH } = require('../utils/pathUtils')
+const { GET_CURRENT_COMMAND_PATH } = require('../utils/pathUtils')
 
 const projectList = Object.keys(projectNames) // 项目名列表
 
@@ -30,8 +34,9 @@ program
       const projectData = projectNames[projectName.toLocaleLowerCase()] // 选择的项目模板信息
       const { dirname = projectName } = options // 命令参数
       gitDownloadLog(projectData) // 欢迎语
+      
       // 读取文件夹
-      fs.readdir(CURRENT_COMMAND_PATH(), {}, (err, files) => {
+      fs.readdir(GET_CURRENT_COMMAND_PATH(), {}, (err, files) => {
         if (err) {
           console.log(err.message.red)
         } else {
@@ -47,8 +52,8 @@ program
             ]).then(answer => {
               const { coverCreate } = answer
               if (coverCreate) {
-                const createProjectPath = path.join(CURRENT_COMMAND_PATH(), dirname)
-                console.log(`那我就干掉${dirname}这个文件夹了哦~`.yellow)
+                const createProjectPath = path.join(GET_CURRENT_COMMAND_PATH(), dirname)
+                console.log(`✅ 那我就覆盖${dirname}这个文件夹哦~`.yellow)
                 deleteFolder(createProjectPath)
                 cloneProject(projectData, dirname).then(res => {}).catch(err => {})
               } else {
@@ -65,14 +70,26 @@ program
 
 const cloneProject = (projectData, dirname) => new Promise((resolve, reject) => {
   const loading = ora('正在下载项目模板\n').start()
+  
   clone(projectData.repositoryUrl, dirname, {}, err => {
     if (err) {
       console.log(err.message)
       loading.fail('下载失败了，换个姿势试试？（小声BB：你这网可能不行）'.red)
       reject()
     } else {
+      addConfigFile(projectData, dirname)
       loading.succeed('下载完成了，请尽情享用吧~'.green)
       resolve()
     }
   })
 })
+
+// 复制配置文件
+const addConfigFile = (projectData, dirname) => {
+  const configFileName = path.join(GET_CURRENT_COMMAND_PATH(), dirname, projectConfigFileName)
+  const config = {
+    ...projectConfig,
+    name: projectData.key,
+  }
+  fs.writeFileSync(configFileName, JSON.stringify(config))
+}

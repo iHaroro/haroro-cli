@@ -12,11 +12,14 @@ const welcomeLog = () => {
  * @param {object} projectData 模板项目信息
  **/
 const gitDownloadLog = projectData => {
-  const { name, homePage } = projectData
+  const {
+    name,
+    homePage,
+  } = projectData
   console.log('\n')
-  name && console.log(`🎉正在创建：${projectData.name}`.blue)
-  homePage && console.log(`🚧项目主页：${projectData.homePage}`.blue)
-  console.log('⭐️给项目点个star个呗？'.yellow)
+  name && console.log(`🎉 正在创建：${projectData.name}`.blue)
+  homePage && console.log(`🚧 项目主页：${projectData.homePage}`.blue)
+  console.log('⭐️ 给项目点个star个呗？'.yellow)
 }
 
 const projectsDataLog = () => {
@@ -30,7 +33,17 @@ const projectsDataLog = () => {
   }
 }
 
+function debugLog () {
+  console.log('DEBUG LOG START')
+  Object.keys(arguments).forEach(item => {
+    console.log(arguments[item])
+  })
+  console.log('DEBUG LOG END')
+  process.exit()
+}
+
 module.exports = {
+  debugLog,
   welcomeLog,
   gitDownloadLog,
   projectsDataLog,
