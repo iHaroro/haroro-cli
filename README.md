@@ -11,10 +11,10 @@
 
 ## 项目模板列表
 
-| 项目名称`<projectName>`  |    项目描述    |                                                                                  项目地址                                                                                   |
-|:--------------------:|:----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| react-entry-template | React多入口项目 | [<img src="https://img.shields.io/static/v1?label=Github&labelColor=green&message=react-entry-template&color=black"/>](https://github.com/iHaroro/react-entry-template) |
-| vue3-entry-template  | vue3多入口项目  |  [<img src="https://img.shields.io/static/v1?label=Github&labelColor=green&message=vue3-entry-template&color=black"/>](https://github.com/iHaroro/vue3-entry-template)  |
+| 项目名称`<projectName>`  |        项目描述        |                                                                                  项目地址                                                                                   |
+|:--------------------:|:------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| react-entry-template |     React多入口项目     | [<img src="https://img.shields.io/static/v1?label=Github&labelColor=green&message=react-entry-template&color=black"/>](https://github.com/iHaroro/react-entry-template) |
+| vue3-entry-template  | vue3多入口项目(仍在建设中🚧) |  [<img src="https://img.shields.io/static/v1?label=Github&labelColor=green&message=vue3-entry-template&color=black"/>](https://github.com/iHaroro/vue3-entry-template)  |
 
 ## 命令使用
 
