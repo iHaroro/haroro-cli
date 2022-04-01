@@ -48,7 +48,7 @@ program
               const { coverCreate } = answer
               if (coverCreate) {
                 const createProjectPath = path.join(CURRENT_COMMAND_PATH(), dirname)
-                console.log(`那我就干掉${dirname}这个文件夹了哦~`.rainbow)
+                console.log(`那我就干掉${dirname}这个文件夹了哦~`.yellow)
                 deleteFolder(createProjectPath)
                 cloneProject(projectData, dirname).then(res => {}).catch(err => {})
               } else {
@@ -65,19 +65,14 @@ program
 
 const cloneProject = (projectData, dirname) => new Promise((resolve, reject) => {
   const loading = ora('正在下载项目模板\n').start()
-  clone(
-    projectData.repositoryUrl,
-    dirname,
-    {},
-    err => {
-      if (err) {
-        console.log(err.message)
-        loading.fail('下载失败了，换个姿势试试？（小声BB：你这网可能不行）'.red)
-        reject()
-      } else {
-        loading.succeed('下载完成了，请尽情享用吧~'.green)
-        resolve()
-      }
-    },
-  )
+  clone(projectData.repositoryUrl, dirname, {}, err => {
+    if (err) {
+      console.log(err.message)
+      loading.fail('下载失败了，换个姿势试试？（小声BB：你这网可能不行）'.red)
+      reject()
+    } else {
+      loading.succeed('下载完成了，请尽情享用吧~'.green)
+      resolve()
+    }
+  })
 })
