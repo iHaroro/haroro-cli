@@ -1,4 +1,4 @@
-const colors = require('colors')
+require('colors')
 const { projectNames } = require('./../constants/projects') // 项目集合常量
 
 const welcomeLog = () => {

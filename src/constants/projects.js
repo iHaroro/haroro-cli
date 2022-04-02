@@ -11,7 +11,7 @@ const projectNames = {
     homePage: 'https://github.com/iHaroro/react-entry-template/tree/master',
     repositoryUrl: 'git@github.com:iHaroro/react-entry-template.git',
     moduleRoot: '/src/pages',
-    moduleTemplatePath: path.resolve(__dirname, '../assets/template/react-module-template'),
+    moduleTemplatePath: path.resolve(__dirname, '../../assets/template/react-module-template'),
   },
   'vue3-entry-template': {
     key: 'vue3-entry-template',
@@ -21,7 +21,7 @@ const projectNames = {
     homePage: 'https://github.com/iHaroro/vue3-entry-template/tree/master',
     repositoryUrl: 'git@github.com:iHaroro/vue3-entry-template.git',
     moduleRoot: '/src/modules',
-    moduleTemplatePath: path.resolve(__dirname, '../assets/template/vue-module-template'),
+    moduleTemplatePath: path.resolve(__dirname, '../../assets/template/vue-module-template'),
   },
 }
 

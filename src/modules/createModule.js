@@ -1,4 +1,4 @@
-const colors = require('colors')
+require('colors')
 const { program } = require('commander')
 const path = require('path')
 const fs = require('fs')

@@ -1,4 +1,4 @@
-const colors = require('colors')
+require('colors')
 const { program } = require('commander')
 const inquirer = require('inquirer')
 const clone = require('git-clone')
